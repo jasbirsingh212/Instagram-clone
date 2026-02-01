@@ -1,7 +1,9 @@
+import { Button } from "@chakra-ui/react";
+
 function App() {
   return (
     <>
-      <h1>Hello, World! Jasbir Singh</h1>
+      <Button>Hello, World! Jasbir Singh</Button>
     </>
   );
 }
