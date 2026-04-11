@@ -44,7 +44,7 @@ const AuthForm = () => {
             justifyContent={"center"}
             alignItems={"center"}
             w={"full"}
-            my={4}
+            my={2}
           >
             <Box h={"1px"} bg={"gray.400"} flex={2} />
             <Text mx={1} or={"white"}>
@@ -66,7 +66,7 @@ const AuthForm = () => {
         </VStack>
       </Box>
 
-      <Box border={"1px solid gray"} borderRadius={"4"} padding={"5"}>
+      <Box border={"1px solid gray"} borderRadius={"4"} padding={"3"}>
         <Flex alignItems={"center"} justifyContent={"center"}>
           <Box mx={2} fontSize={"14"}>
             {isLogin ? "Don't have an account?" : "Already have an account?"}
