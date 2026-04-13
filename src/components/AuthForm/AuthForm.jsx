@@ -8,10 +8,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
   const [inputValues, setInputValues] = useState({
     email: "",
     password: "",
@@ -31,6 +34,7 @@ const AuthForm = () => {
     // Implement login logic here
     if (isLogin && inputValues.email && inputValues.password) {
       console.log("Logging in with:", inputValues);
+      setIsAuthenticated(true);
     } else {
       alert("Please fill in all fields for login.");
     }
@@ -45,7 +49,8 @@ const AuthForm = () => {
       inputValues.confirmPassword
     ) {
       inputValues.password === inputValues.confirmPassword
-        ? console.log("Signing up with:", inputValues)
+        ? (console.log("Signing up with:", inputValues),
+          setIsAuthenticated(true))
         : alert("Passwords do not match.");
     } else {
       alert("Please fill in all fields for sign-up.");
@@ -54,7 +59,15 @@ const AuthForm = () => {
 
   const handleAuth = () => {
     isLogin ? handleLogin() : handleSignUp();
+    // Navigate to home page after successful login/sign-up
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      alert("Authentication successful!");
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <>
