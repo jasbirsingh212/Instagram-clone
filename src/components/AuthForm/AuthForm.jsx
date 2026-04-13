@@ -8,10 +8,66 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+  const [inputValues, setInputValues] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const handleLogin = () => {
+    // Implement login logic here
+    if (isLogin && inputValues.email && inputValues.password) {
+      console.log("Logging in with:", inputValues);
+      setIsAuthenticated(true);
+    } else {
+      alert("Please fill in all fields for login.");
+    }
+  };
+
+  const handleSignUp = () => {
+    // Implement sign-up logic here
+    if (
+      !isLogin &&
+      inputValues.email &&
+      inputValues.password &&
+      inputValues.confirmPassword
+    ) {
+      inputValues.password === inputValues.confirmPassword
+        ? (console.log("Signing up with:", inputValues),
+          setIsAuthenticated(true))
+        : alert("Passwords do not match.");
+    } else {
+      alert("Please fill in all fields for sign-up.");
+    }
+  };
+
+  const handleAuth = () => {
+    isLogin ? handleLogin() : handleSignUp();
+    // Navigate to home page after successful login/sign-up
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      alert("Authentication successful!");
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <>
@@ -24,18 +80,41 @@ const AuthForm = () => {
             alt="Instagram Logo"
           />
 
-          <Input placeholder="Email" fontSize={"14"} type="email" />
-          <Input placeholder="Password" fontSize={"14"} type="password" />
+          <Input
+            placeholder="Email"
+            name="email"
+            fontSize={"14"}
+            type="email"
+            value={inputValues.email}
+            onChange={handleInputChange}
+          />
+          <Input
+            placeholder="Password"
+            fontSize={"14"}
+            name="password"
+            type="password"
+            value={inputValues.password}
+            onChange={handleInputChange}
+          />
 
           {!isLogin ? (
             <Input
               placeholder="Confirm Password"
               fontSize={"14"}
+              name="confirmPassword"
               type="password"
+              value={inputValues.confirmPassword}
+              onChange={handleInputChange}
             />
           ) : null}
 
-          <Button colorScheme={"blue"} w={"full"} fontSize={"14"} size={"sm"}>
+          <Button
+            colorScheme={"blue"}
+            w={"full"}
+            fontSize={"14"}
+            size={"sm"}
+            onClick={handleAuth}
+          >
             {isLogin ? "Log In" : "Sign Up"}
           </Button>
 
@@ -84,5 +163,4 @@ const AuthForm = () => {
     </>
   );
 };
-
 export default AuthForm;
