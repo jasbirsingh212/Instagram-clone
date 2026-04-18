@@ -2,14 +2,14 @@ import PostHeader from "./PostHeader.jsx";
 import PostFooter from "./PostFooter.jsx";
 import { Box, Image } from "@chakra-ui/react";
 
-const FeedPost = () => {
+const FeedPost = ({ img, username, avatar }) => {
   return (
     <div>
-      <PostHeader />
-      <Box>
-        <Image src="/img1.png" alt="UserPost Image" />
+      <PostHeader username={username} avatar={avatar} />
+      <Box my={2} borderRadius={"4"} overflow={"hidden"}>
+        <Image src={img} alt={`${username}'s post`} />
       </Box>
-      <PostFooter />
+      <PostFooter username={username} />
     </div>
   );
 };
