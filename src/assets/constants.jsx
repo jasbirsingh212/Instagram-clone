@@ -158,7 +158,7 @@ export const NotificationsLogo = () => (
   </svg>
 );
 
-export const UnlikeLogo = () => (
+export const UnLikeLogo = () => (
   <svg
     aria-label="Unlike"
     color="rgb(255, 48, 64)"
