@@ -57,3 +57,23 @@ export const feedPosts = [
     avatar: "/img4.png",
   },
 ];
+
+export const suggestedUsers = [
+  {
+    name: "Dan Abrahamov",
+    followers: 1392,
+    avatar:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png",
+  },
+  {
+    name: "Ryan Florence",
+    followers: 567,
+    avatar: "https://bit.ly/ryan-florence",
+  },
+  {
+    name: "Christian Nwamba",
+    followers: 759,
+    avatar:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/7.png",
+  },
+];
