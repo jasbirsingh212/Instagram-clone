@@ -32,7 +32,7 @@ const SuggestedUsers = () => {
           />
         ))}
 
-      <Box fontSize={"12"} color={"gray.500"} mt={5} alignSelf={"start"}>
+      <Box fontSize={"12"} color={"gray.500"} alignSelf={"start"}>
         &copy; {new Date().getFullYear()} Instagram from{" "}
         <Link href="" target="_blank" fontSize={"14"} color={"blue.500"}>
           Jasbir Singh
