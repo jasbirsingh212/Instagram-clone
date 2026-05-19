@@ -77,3 +77,26 @@ export const suggestedUsers = [
       "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/7.png",
   },
 ];
+
+export const profilePosts = [
+  {
+    img: "/img1.png",
+    username: "burakorkmezz",
+    avatar: "/img1.png",
+  },
+  {
+    img: "/img2.png",
+    username: "burakorkmezz",
+    avatar: "/img2.png",
+  },
+  {
+    img: "/img3.png",
+    username: "burakorkmezz",
+    avatar: "/img3.png",
+  },
+  {
+    img: "/img4.png",
+    username: "burakorkmezz",
+    avatar: "/img4.png",
+  },
+];
