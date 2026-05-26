@@ -108,3 +108,87 @@ export const profilePosts = [
       "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img4_p36xm8.jpg",
   },
 ];
+
+export const postComments = [
+  {
+    createdAt: "1 day ago",
+    username: "Dan Abrahamov",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png",
+    comment: "This is a great post!",
+  },
+  {
+    createdAt: "12 hours ago",
+    username: "Ryan Florence",
+    profilePic: "https://bit.ly/ryan-florence",
+    comment: "I love this!",
+  },
+  {
+    createdAt: "5 hours ago",
+    username: "Christian Nwamba",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/7.png",
+    comment: "Amazing content!",
+  },
+
+  {
+    createdAt: "1 day ago",
+    username: "Dan Abrahamov",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png",
+    comment: "This is a great post!",
+  },
+  {
+    createdAt: "12 hours ago",
+    username: "Ryan Florence",
+    profilePic: "https://bit.ly/ryan-florence",
+    comment: "I love this!",
+  },
+  {
+    createdAt: "5 hours ago",
+    username: "Christian Nwamba",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/7.png",
+    comment: "Amazing content!",
+  },
+  {
+    createdAt: "1 day ago",
+    username: "Dan Abrahamov",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png",
+    comment: "This is a great post!",
+  },
+  {
+    createdAt: "12 hours ago",
+    username: "Ryan Florence",
+    profilePic: "https://bit.ly/ryan-florence",
+    comment: "I love this!",
+  },
+  {
+    createdAt: "5 hours ago",
+    username: "Christian Nwamba",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/7.png",
+    comment: "Amazing content!",
+  },
+  {
+    createdAt: "1 day ago",
+    username: "Dan Abrahamov",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png",
+    comment: "This is a great post!",
+  },
+  {
+    createdAt: "12 hours ago",
+    username: "Ryan Florence",
+    profilePic: "https://bit.ly/ryan-florence",
+    comment: "I love this!",
+  },
+  {
+    createdAt: "5 hours ago",
+    username: "Christian Nwamba",
+    profilePic:
+      "https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/7.png",
+    comment: "Amazing content!",
+  },
+];

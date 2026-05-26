@@ -12,10 +12,15 @@ import {
   ModalBody,
   Box,
   Avatar,
+  Divider,
+  VStack,
 } from "@chakra-ui/react";
 import { FaComment } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
+import { postComments } from "../../assets/data";
+import Comment from "../Comment/Comment";
+import PostFooter from "../FeedPosts/PostFooter";
 
 const ProfilePost = ({ img }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -118,6 +123,26 @@ const ProfilePost = ({ img }) => {
                     <MdDelete size={20} cursor={"pointer"} />
                   </Box>
                 </Flex>
+                <Divider my={4} bg={"gray.500"} />
+                <VStack
+                  w={"full"}
+                  alignItems={"start"}
+                  overflowY={"auto"}
+                  maxH={"350px"}
+                >
+                  {postComments?.length > 0 &&
+                    postComments.map((comment, idx) => (
+                      <Comment
+                        key={idx}
+                        createdAt={comment.createdAt}
+                        username={comment.username}
+                        profilePic={comment.profilePic}
+                        comment={comment.comment}
+                      />
+                    ))}
+                </VStack>
+                <Divider my={4} bg={"gray.800"} />
+                <PostFooter isProfilePage={true} />
               </Flex>
             </Flex>
           </ModalBody>

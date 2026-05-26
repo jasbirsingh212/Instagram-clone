@@ -14,7 +14,7 @@ import {
   UnLikeLogo,
 } from "../../assets/constants.jsx";
 
-const PostFooter = ({ username }) => {
+const PostFooter = ({ username, isProfilePage }) => {
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(100);
   const [comments, setComments] = useState(20);
@@ -30,10 +30,10 @@ const PostFooter = ({ username }) => {
   };
 
   return (
-    <Box mb={10}>
-      <Flex alignItems={"center"} gap={4} w={"full"} pt={0} mb={2} mt={"4"}>
+    <Box mb={isProfilePage ? 0 : 10} marginTop={"auto"}>
+      <Flex alignItems={"center"} gap={4} w={"full"} pt={0} mb={2} mt={"4"}q>
         <Box onClick={handleLike} cursor={"pointer"} fontSize={18}>
-          {liked ? <NotificationsLogo /> : <UnLikeLogo />}
+          {!liked ? <NotificationsLogo /> : <UnLikeLogo />}
         </Box>
 
         <Box fontSize={18} cursor={"pointer"}>
@@ -44,18 +44,21 @@ const PostFooter = ({ username }) => {
       <Text fontSize={14} fontWeight={"600"}>
         {likesCount} likes
       </Text>
-
-      <Text fontSize={"sm"} fontWeight={"700"}>
-        {username}
-        {"  "}
-        <Text as={"span"} ml={1} fontSize={"xs"} fontWeight={"400"}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
-          dicta!{" "}
-        </Text>
-      </Text>
-      <Text fontSize={"sm"} color={"gray"}>
-        View all {comments} comments
-      </Text>
+      {!isProfilePage && (
+        <>
+          <Text fontSize={"sm"} fontWeight={"700"}>
+            {username}
+            {"  "}
+            <Text as={"span"} ml={1} fontSize={"xs"} fontWeight={"400"}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+              dicta!{" "}
+            </Text>
+          </Text>
+          <Text fontSize={"sm"} color={"gray"}>
+            View all {comments} comments
+          </Text>
+        </>
+      )}
 
       <Flex
         alignItems={"center"}
