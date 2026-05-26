@@ -37,24 +37,28 @@ export const sidebarItems = [
 
 export const feedPosts = [
   {
-    img: "/img1.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img1_nuzygv.jpg",
     username: "burakorkmezz",
-    avatar: "/img1.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img1_nuzygv.jpg",
   },
   {
-    img: "/img2.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img2_gpogjb.jpg",
     username: "josh",
-    avatar: "/img2.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img2_gpogjb.jpg",
   },
   {
-    img: "/img3.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img3_pqixab.jpg",
     username: "janedoe",
-    avatar: "/img3.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img3_pqixab.jpg",
   },
   {
-    img: "/img4.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img4_p36xm8.jpg",
     username: "johndoe",
-    avatar: "/img4.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img4_p36xm8.jpg",
   },
 ];
 
@@ -80,23 +84,27 @@ export const suggestedUsers = [
 
 export const profilePosts = [
   {
-    img: "/img1.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img1_nuzygv.jpg",
     username: "burakorkmezz",
-    avatar: "/img1.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img1_nuzygv.jpg",
   },
   {
-    img: "/img2.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img2_gpogjb.jpg",
     username: "burakorkmezz",
-    avatar: "/img2.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img2_gpogjb.jpg",
   },
   {
-    img: "/img3.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img3_pqixab.jpg",
     username: "burakorkmezz",
-    avatar: "/img3.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img3_pqixab.jpg",
   },
   {
-    img: "/img4.png",
+    img: "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img4_p36xm8.jpg",
     username: "burakorkmezz",
-    avatar: "/img4.png",
+    avatar:
+      "https://res.cloudinary.com/dodz78rrl/image/upload/v1779770094/img4_p36xm8.jpg",
   },
 ];
