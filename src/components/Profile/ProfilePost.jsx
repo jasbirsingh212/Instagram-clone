@@ -33,7 +33,7 @@ const ProfilePost = ({ img }) => {
         border={"1px solid"}
         borderColor={"whiteAlpha.300"}
         position={"relative"}
-        aspesRatio={"1/1"}
+        aspectRatio={"1/1"}
         onClick={onOpen}
       >
         <Flex
