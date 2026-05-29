@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import GoogleAuth from "./GoogleAuth";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -43,16 +43,7 @@ const AuthForm = () => {
             <Box h={"1px"} bg={"gray.400"} flex={2} />
           </Flex>
 
-          <Flex
-            alignItems={"center"}
-            justifyContent={"center"}
-            cursor={"pointer"}
-          >
-            <Image src="/google.png" w={"5"} alt="Google Icon" />
-            <Text mx={"2"} color={"blue.500"}>
-              Continue with Google
-            </Text>
-          </Flex>
+          <GoogleAuth />
         </VStack>
       </Box>
 
