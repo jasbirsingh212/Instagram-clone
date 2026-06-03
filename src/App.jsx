@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import AuthPage from "./pages/AuthPage/AuthPage.jsx";
@@ -25,7 +25,10 @@ function App() {
           }
         />
 
-        <Route path="/auth" element={<AuthPage />} />
+        <Route
+          path="/auth"
+          element={authUser ? <Navigate to="/" /> : <AuthPage />}
+        />
 
         <Route
           path="/:username"
