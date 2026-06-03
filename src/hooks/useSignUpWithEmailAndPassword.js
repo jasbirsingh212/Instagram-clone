@@ -2,6 +2,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth, fireStoreDB } from "../Firebase/firebase-config";
 import { doc, setDoc } from "firebase/firestore";
 import useShowToast from "./useShowToast";
+import useAuthStore from "../store/authStore";
 // import { useNavigate } from "react-router-dom";
 
 const useSignUpWithEmailAndPassword = () => {
@@ -9,6 +10,7 @@ const useSignUpWithEmailAndPassword = () => {
     useCreateUserWithEmailAndPassword(auth);
   const showToast = useShowToast();
   //   const navigation = useNavigate();
+  const loginUser = useAuthStore((state) => state.login);
 
   const signUpWithEmailAndPassword = async ({
     email,
@@ -50,6 +52,7 @@ const useSignUpWithEmailAndPassword = () => {
         await setDoc(doc(fireStoreDB, "users", newUser.user.uid), userDoc);
 
         localStorage.setItem("user-info", JSON.stringify(userDoc));
+        loginUser(userDoc);
         showToast("Success", "Account created successfully!", "success");
         // navigation("/");
       }

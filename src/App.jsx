@@ -6,7 +6,11 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
 
 import PageLayout from "./Layouts/PageLayout/PageLayout.jsx";
 
+import useAuthStore from "./stores/authStore.js";
+
 function App() {
+  const authUser = useAuthStore((state) => state.user);
+
   return (
     <PageLayout>
       <Routes>
