@@ -4,9 +4,11 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import AuthPage from "./pages/AuthPage/AuthPage.jsx";
 import ProfilePage from "./pages/ProfilePage/ProfilePage.jsx";
 
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
+
 import PageLayout from "./Layouts/PageLayout/PageLayout.jsx";
 
-import useAuthStore from "./stores/authStore.js";
+import useAuthStore from "./store/authStore.js";
 
 function App() {
   const authUser = useAuthStore((state) => state.user);
@@ -14,9 +16,25 @@ function App() {
   return (
     <PageLayout>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute isAuthenticated={!!authUser}>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="/:username" element={<ProfilePage />} />
+
+        <Route
+          path="/:username"
+          element={
+            <ProtectedRoute isAuthenticated={!!authUser}>
+              <ProfilePage />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </PageLayout>
   );
