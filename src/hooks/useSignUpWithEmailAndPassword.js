@@ -3,13 +3,13 @@ import { auth, fireStoreDB } from "../Firebase/firebase-config";
 import { doc, setDoc } from "firebase/firestore";
 import useShowToast from "./useShowToast";
 import useAuthStore from "../store/authStore";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const useSignUpWithEmailAndPassword = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const showToast = useShowToast();
-  //   const navigation = useNavigate();
+  const navigation = useNavigate();
   const loginUser = useAuthStore((state) => state.login);
 
   const signUpWithEmailAndPassword = async ({
@@ -54,7 +54,7 @@ const useSignUpWithEmailAndPassword = () => {
         localStorage.setItem("user-info", JSON.stringify(userDoc));
         loginUser(userDoc);
         showToast("Success", "Account created successfully!", "success");
-        // navigation("/");
+        navigation("/");
       }
     } catch (err) {
       console.error("Error signing up:", err);

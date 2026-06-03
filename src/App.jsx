@@ -19,7 +19,7 @@ function App() {
         <Route
           path="/"
           element={
-            <ProtectedRoute isAuthenticated={!!authUser}>
+            <ProtectedRoute isAuthenticated={authUser}>
               <HomePage />
             </ProtectedRoute>
           }
@@ -30,7 +30,7 @@ function App() {
         <Route
           path="/:username"
           element={
-            <ProtectedRoute isAuthenticated={!!authUser}>
+            <ProtectedRoute isAuthenticated={authUser}>
               <ProfilePage />
             </ProtectedRoute>
           }
